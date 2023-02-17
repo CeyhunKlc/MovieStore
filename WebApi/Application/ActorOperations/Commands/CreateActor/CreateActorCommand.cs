@@ -4,7 +4,7 @@ using AutoMapper;
 using WebApi.dbOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.ActorOperations.CreateActor
+namespace WebApi.Application.ActorOperation.Commands.CreateActor
 {
     public class CreateActorCommand
     {

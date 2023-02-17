@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace WebApi.Application.ActorOperations.CreateActor
+namespace WebApi.Application.ActorOperation.Commands.CreateActor
 {
     public class CreateActorCommandValidator : AbstractValidator<CreateActorCommand>
     {
