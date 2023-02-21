@@ -1,24 +1,61 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using webApi.Services;
+using WebApi.dbOperations;
+using WebApi.Middlewires;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+ 
 
+builder.Services.AddCors();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateAudience = true,
+        ValidateIssuer = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Token: Issuer"],
+        ValidAudience = builder.Configuration["Token: Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
+        ClockSkew = TimeSpan.Zero
+
+    };
+});
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
+});
+
+object value = builder.Services.AddDbContext<MovieStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "MovieStoreDB"));
+builder.Services.AddScoped<IMovieStoreDbContext>(Provider => Provider.GetService<IMovieStoreDbContext>());
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSingleton<ILoggerService, DBLogger>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MinimalApp v1"));
 }
 
-app.UseHttpsRedirection();
-
+app.UseAuthentication();
+//app.UseHttpsRedirection();
+app.UseRouting();
 app.UseAuthorization();
+
+app.UseCustomExceptionMiddle();
 
 app.MapControllers();
 

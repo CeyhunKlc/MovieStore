@@ -3,10 +3,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using WebApi.Application.TokenOperations.Models;
 using WebApi.Entities;
-using WebApi.TokenOperations.Models;
 
-namespace WebApi.TokenOperations
+
+namespace WebApi.Application.TokenOperations
 {
     public class TokenHandler
     {
@@ -16,11 +17,11 @@ namespace WebApi.TokenOperations
             Configuration = configuration;
         }
 
-        public Token CreateAccessToken(User user)
+        public Token CreateAccessToken(Customer customer)
         {
             Token tokenModel = new Token();
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is my custom secret key for authentication"));
-            SigningCredentials signingCredentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
+            SigningCredentials credentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
             
             tokenModel.Expiration = DateTime.Now.AddMinutes(15);
 
@@ -30,7 +31,7 @@ namespace WebApi.TokenOperations
                 audience:Configuration["Token: Audience"],
                 expires: tokenModel.Expiration,
                 notBefore : DateTime.Now,
-                signingCredentials : signingCredentials
+                signingCredentials : credentials
             );
 
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();

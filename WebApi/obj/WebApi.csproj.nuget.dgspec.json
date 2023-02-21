@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Ceyhun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ceyhun\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,10 +71,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3-beta1, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
             }
           },
           "imports": [

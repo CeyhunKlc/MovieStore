@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApi.dbOperations;
+using WebApi.Entities;
 
 namespace WebApi.Application.MovieOperation.Queries.GetMovie
 {

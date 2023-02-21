@@ -1,0 +1,7 @@
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.csproj.AssemblyReference.cache
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.AssemblyInfoInputs.cache
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.AssemblyInfo.cs
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ceyhun\Desktop\Pratikler2\MovieStore\WebApi\obj\Debug\net7.0\WebApi.MvcApplicationPartsAssemblyInfo.cache

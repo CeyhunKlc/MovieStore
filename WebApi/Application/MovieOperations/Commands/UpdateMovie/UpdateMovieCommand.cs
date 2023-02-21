@@ -8,7 +8,7 @@ using AutoMapper;
 
 namespace WebApi.Application.MovieOperation.Commands.UpdateMovie
 {
-    public class DeleteMovieCommand
+    public class UpdateMovieCommand
     {
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;

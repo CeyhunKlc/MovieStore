@@ -1,4 +1,5 @@
 using FluentValidation;
+namespace WebApi.Entities;
 
 namespace WebApi.Application.ActorOperation.Commands.UpdateActor
 {

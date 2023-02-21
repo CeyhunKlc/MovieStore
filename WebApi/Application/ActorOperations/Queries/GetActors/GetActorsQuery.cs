@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApi.dbOperations;
+namespace WebApi.Entities;
 
 namespace WebApi.Application.ActorOperation.Queries.GetActors
 {
