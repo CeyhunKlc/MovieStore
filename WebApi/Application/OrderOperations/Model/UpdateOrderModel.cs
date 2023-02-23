@@ -1,3 +1,6 @@
+using WebApi.Entities;
+
+
 namespace WebApi.Application.OrderOperations.Model;
 
 public class UpdateOrderModel

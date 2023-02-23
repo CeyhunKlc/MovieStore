@@ -1,6 +1,8 @@
 using FluentValidation;
+using WebApi.Entities;
+using WebApi.Application.DirectorOperation.Commands.CreateDirector;
 
-namespace WebApi.Application.DirectorOperation.Commands.CreateDirector
+namespace WebApi.Application.DirectorOperation.Commands.CreateDirectorValidator
 {
     public class CreateDirectorCommandValidator : AbstractValidator<CreateDirectorCommand>
     {

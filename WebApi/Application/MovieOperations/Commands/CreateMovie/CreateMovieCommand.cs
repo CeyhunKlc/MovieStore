@@ -34,7 +34,9 @@ namespace WebApi.Application.MovieOperation.Commands.CreateMovie
             _dbContext.SaveChanges();
         }
 
-        public class CreateMovieModel
+        
+    }
+    public class CreateMovieModel
         {
            public int GenreId { get; set; }
            public string Title{get; set;}
@@ -44,5 +46,4 @@ namespace WebApi.Application.MovieOperation.Commands.CreateMovie
            public int  Price {get; set;}
         }
 
-    }
 }

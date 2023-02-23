@@ -1,4 +1,8 @@
+using WebApi.Entities;
+
+
 namespace WebApi.Application.TokenOperations.Models
+
 {
     public class Token
     {

@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Common;
 using WebApi.dbOperations;
+using WebApi.Entities;
 
 namespace WebApi.Application.GenreOperation.Queries.GetGenreDetail
 {

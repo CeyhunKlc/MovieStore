@@ -1,6 +1,8 @@
 using FluentValidation;
+using WebApi.Entities;
+using WebApi.Application.OrderOperation.Commands.UpdateOrder;
 
-namespace WebApi.Application.OrderOperation.Commands.UpdateOrder
+namespace WebApi.Application.OrderOperation.Commands.UpdateOrderValidator
 {
     public class UpdateOrderCommandValidator : AbstractValidator<UpdateOrderCommand>
     {

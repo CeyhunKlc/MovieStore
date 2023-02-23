@@ -1,6 +1,8 @@
 using FluentValidation;
+using WebApi.Entities;
+using WebApi.Application.DirectorOperation.Commands.UpdateDirector;
 
-namespace WebApi.Application.DirectorOperation.Commands.UpdateDirector
+namespace WebApi.Application.DirectorOperation.Commands.UpdateDirectorValidator
 {
     public class UpdateDirectorCommandValidator : AbstractValidator<UpdateDirectorCommand>
     {

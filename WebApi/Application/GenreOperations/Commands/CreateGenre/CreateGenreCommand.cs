@@ -34,11 +34,12 @@ namespace WebApi.Application.GenreOperation.Commands.CreateGenre
             _dbContext.SaveChanges();
         }
 
+
+    }
+
         public class CreateGenreModel
         {
            public string Name { get; set; }
            
         }
-
-    }
 }

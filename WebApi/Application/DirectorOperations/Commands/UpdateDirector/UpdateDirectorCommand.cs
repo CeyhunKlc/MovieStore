@@ -8,7 +8,7 @@ using WebApi.Entities;
 
 namespace WebApi.Application.DirectorOperation.Commands.UpdateDirector
 {
-    public class DeleteDirectorCommand
+    public class UpdateDirectorCommand
     {
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;

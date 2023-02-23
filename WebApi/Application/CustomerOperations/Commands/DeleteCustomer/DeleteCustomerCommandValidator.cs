@@ -1,7 +1,8 @@
 using FluentValidation;
-namespace WebApi.Entities;
+using WebApi.Application.CustomerOperation.Commands.DeleteCustomer;
+using WebApi.Entities;
 
-namespace WebApi.Application.CustomerOperation.Commands.DeleteCustomer
+namespace WebApi.Application.CustomerOperation.Commands.DeleteCustomerValidator
 {
     public class DeleteCustomerCommandValidator : AbstractValidator<DeleteCustomerCommand>
     {

@@ -1,6 +1,8 @@
 using FluentValidation;
+using WebApi.Entities;
+using WebApi.Application.DirectorOperation.Commands.DeleteDirector;
 
-namespace WebApi.Application.DirectorOperation.Commands.DeleteDirector
+namespace WebApi.Application.DirectorOperation.Commands.DeleteDirectorValidator
 {
     public class DeleteDirectorCommandValidator : AbstractValidator<DeleteDirectorCommand>
     {

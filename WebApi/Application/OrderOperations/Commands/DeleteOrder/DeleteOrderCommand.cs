@@ -1,4 +1,5 @@
 using WebApi.dbOperations;
+using WebApi.Entities;
 
 namespace WebApi.Application.OrderOperation.Commands.DeleteOrder
 {

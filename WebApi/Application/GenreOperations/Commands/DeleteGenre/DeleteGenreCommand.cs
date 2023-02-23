@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using WebApi.dbOperations;
+using WebApi.Entities;
 
 namespace WebApi.Application.GenreOperation.Commands.DeleteGenre
 {

@@ -7,7 +7,7 @@ using WebApi.Entities;
 
 namespace WebApi.Application.ActorOperation.Commands.UpdateActor
 {
-    public class DeleteActorCommand
+    public class UpdateActorCommand
     {
         private readonly MovieStoreDbContext _context;
         public int ActorId { get; set; }

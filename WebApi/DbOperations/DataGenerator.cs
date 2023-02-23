@@ -1,13 +1,15 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Entities;
+
+
 namespace WebApi.dbOperations
 {
     public class DataGenerator
     {
         public static void Initialize(IServiceProvider serviceprovider)
         {
-            using (var context = new MovieStoreDbContext(serviceprovider.GetRequiredService<DbContextOptions<BookStoreDBContext>>()))
+            using (var context = new MovieStoreDbContext(serviceprovider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
             {
                 if (context.Movies.Any())
                 {

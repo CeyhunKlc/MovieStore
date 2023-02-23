@@ -1,7 +1,8 @@
 using FluentValidation;
-namespace WebApi.Entities;
+using WebApi.Entities;
+using WebApi.Application.CustomerOperation.Commands.CreateCustomer;
 
-namespace WebApi.Application.CustomerOperation.Commands.CreateCustomer
+namespace WebApi.Application.CustomerOperation.Commands.CreateCustomerValidator
 {
     public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
     {

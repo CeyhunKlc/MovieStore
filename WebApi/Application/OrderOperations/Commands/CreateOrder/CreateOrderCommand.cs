@@ -8,7 +8,7 @@ namespace WebApi.Application.OrderOperation.Commands.CreateOrder
 {
     public class CreateOrderCommand
     {
-        public CreateOrderModel Model ;
+      //  public CreateOrderModel Model ;
 
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
