@@ -4,7 +4,7 @@ using System.Linq;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Common;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
 namespace WebApi.Application.DirectorOperation.Queries.GetDirectorDetail
@@ -24,7 +24,7 @@ namespace WebApi.Application.DirectorOperation.Queries.GetDirectorDetail
 
         public List<GetListDirectorModel> Handle()
         {
-            var directors = _context.Directors.where(x => x.IsActive == true).Tolist<Director>();
+            var directors = _context.Directors.Where(x => x.IsActive == true).Tolist<Director>();
             var mapModel = _mapper.Map.List<GetListDirectorModel>(directors);
             return mapModel;
         }

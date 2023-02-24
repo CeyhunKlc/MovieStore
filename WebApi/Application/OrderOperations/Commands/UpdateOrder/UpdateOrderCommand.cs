@@ -1,7 +1,8 @@
 using AutoMapper;
 using WebApi.Application.OrderOperations.Model;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
+
 
 namespace WebApi.Application.OrderOperation.Commands.UpdateOrder
 {
@@ -20,7 +21,8 @@ namespace WebApi.Application.OrderOperation.Commands.UpdateOrder
 
         public void Handle()
         {
-            Customer customer = _context.Customers.SingleOrDefault(x => x.Id == CustomerId);
+            Customer customer = _context.Customers.SingleOrDefault(s => s.Id == Model.CustomerId);
+
             Movie movies = _context.Movies.SingleOrDefault(x => x.Id == MovieId);
 
             Order order = _context.Orders.SingleOrDefault(x => x.Id == OrderId);

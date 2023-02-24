@@ -1,54 +1,34 @@
-using AutoMapper;
 using WebApi.Application.ActorOperation.Commands.CreateActor;
-using WebApi.Application.ActorOperation.Commands.CreateActorValidator;
 using WebApi.Application.ActorOperation.Commands.DeleteActor;
-using WebApi.Application.ActorOperation.Commands.DeleteActorValidator;
 using WebApi.Application.ActorOperation.Commands.UpdateActor;
-using WebApi.Application.ActorOperation.Commands.UpdateActorValidator;
 using WebApi.Application.ActorOperation.Queries.GetActorDetail;
-using WebApi.Application.ActorOperation.Queries.GetActors;
 using WebApi.Application.CustomerOperation.Commands.CreateCustomer;
-using WebApi.Application.CustomerOperation.Commands.CreateCustomerValidator;
 using WebApi.Application.CustomerOperation.Commands.DeleteCustomer;
-using WebApi.Application.CustomerOperation.Commands.DeleteCustomerValidator;
 using WebApi.Application.DirectorOperation.Commands.CreateDirector;
-using WebApi.Application.DirectorOperation.Commands.CreateDirectorValidator;
 using WebApi.Application.DirectorOperation.Commands.DeleteDirector;
-using WebApi.Application.DirectorOperation.Commands.DeleteDirectorValidator;
 using WebApi.Application.DirectorOperation.Commands.UpdateDirector;
-using WebApi.Application.DirectorOperation.Commands.UpdateDirectorValidator;
 using WebApi.Application.DirectorOperation.Queries.GetDirectors;
 using WebApi.Application.DirectorOperation.Queries.GetDirectorDetail;
 using WebApi.Application.GenreOperation.Commands.CreateGenre;
-using WebApi.Application.GenreOperation.Commands.CreateGenreValidator;
 using WebApi.Application.GenreOperation.Commands.DeleteGenre;
-using WebApi.Application.GenreOperation.Commands.DeleteGenreValidator;
 using WebApi.Application.GenreOperation.Commands.UpdateGenre;
-using WebApi.Application.GenreOperation.Commands.UpdateGenreValidator;
 using WebApi.Application.GenreOperation.Queries.GetGenreDetail;
-using WebApi.Application.GenreOperation.Queries.GetGenreDetailValidator;
 using WebApi.Application.GenreOperation.Queries.GetGenre;
 using WebApi.Application.MovieOperation.Commands.CreateMovie;
-using WebApi.Application.MovieOperation.Commands.CreateMovieValidator;
 using WebApi.Application.MovieOperation.Commands.DeleteMovie;
-using WebApi.Application.MovieOperation.Commands.DeleteMovieValidator;
 using WebApi.Application.MovieOperation.Commands.UpdateMovie;
-using WebApi.Application.MovieOperation.Commands.UpdateMovieValidator;
 using WebApi.Application.MovieOperation.Queries.GetMovieDetail;
 using WebApi.Application.MovieOperation.Queries.GetMovie;
 using WebApi.Application.OrderOperation.Commands.CreateOrder;
-using WebApi.Application.OrderOperation.Commands.CreateOrderValidator;
 using WebApi.Application.OrderOperation.Commands.DeleteOrder;
-using WebApi.Application.OrderOperation.Commands.DeleteOrderValidator;
 using WebApi.Application.OrderOperation.Commands.UpdateOrder;
-using WebApi.Application.OrderOperation.Commands.UpdateOrderValidator;
 using WebApi.Application.OrderOperations.Model;
 using WebApi.Application.OrderOperation.Queries.GetOrderDetailQuery;
 using WebApi.Application.OrderOperation.Queries.GetOrders;
-using WebApi.Application.TokenOperations.Models;
+using WebApi.Application.OrderOperations.Model;
 using WebApi.Application.TokenOperations;
 using WebApi.Entities;
-
+using AutoMapper;
 
 namespace WebApi.Common
 {
@@ -58,10 +38,10 @@ namespace WebApi.Common
         {
             //Movei
             CreateMap<Movie, MoviesViewModel>()
-            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            .ForMember(dest => dest.GenreId, opt => opt.MapFrom(src => src.Genre.Name));
 
             CreateMap<Movie, MovieDetailViewModel>()
-            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            .ForMember(dest => dest.GenreId, opt => opt.MapFrom(src => src.Genre.Name));
 
             CreateMap<Movie, CreateMovieModel>().ReverseMap();
 
@@ -85,7 +65,7 @@ namespace WebApi.Common
             //Actor
             CreateMap<Actor, CreateActorModel>().ReverseMap();
 
-            CreateMap<Actor, ActorsViewModel>().ReverseMap();
+            CreateMap<Actor, UpdateActorModel>().ReverseMap();
 
 
             //Director
@@ -103,7 +83,7 @@ namespace WebApi.Common
             CreateMap<UpdateOrderModel, Order>().ReverseMap();
 
             CreateMap<Customer, OrderViewModel>()
-                .ForMember(dest => dest.NameSurname, opt => opt.MapFrom(m => m.Name + " " + m.LastName))
+                .ForMember(dest => dest.NameSurname, opt => opt.MapFrom(m => m.Name + " " + m.Surname))
                 .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.Orders.Select(s => s.Movie.Title)))
                 .ForMember(dest => dest.Price, opt => opt.MapFrom(m => m.Orders.Select(s => s.Movie.Price)))
                 .ForMember(dest => dest.PurchasedDate, opt => opt.MapFrom(m => m.Orders.Select(s => s.purchasedTime)));

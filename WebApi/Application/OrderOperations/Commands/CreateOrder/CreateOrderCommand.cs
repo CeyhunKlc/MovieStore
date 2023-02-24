@@ -1,14 +1,16 @@
 using System;
 using System.Linq;
 using AutoMapper;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
+using WebApi.Application.OrderOperations.Model;
 
 namespace WebApi.Application.OrderOperation.Commands.CreateOrder
 {
     public class CreateOrderCommand
     {
-      //  public CreateOrderModel Model ;
+
+        public CreateOrderModel Model ;
 
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;

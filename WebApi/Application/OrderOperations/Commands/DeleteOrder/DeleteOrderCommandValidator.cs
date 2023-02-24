@@ -1,14 +1,14 @@
 using FluentValidation;
 using WebApi.Entities;
-using WebApi.Application.OrderOperation.Commands.DeleteOrder;
 
-namespace WebApi.Application.OrderOperation.Commands.DeleteOrderValidator
+
+namespace WebApi.Application.OrderOperation.Commands.DeleteOrder
 {
     public class DeleteOrderCommandValidator : AbstractValidator<DeleteOrderCommand>
     {
         public DeleteOrderCommandValidator()
         {
-            RuleFor(a=>a.Model.OrderId).NotEmpty();
+           // RuleFor(a=>a.Model.OrderId).NotEmpty();
         }  
     }
 }        

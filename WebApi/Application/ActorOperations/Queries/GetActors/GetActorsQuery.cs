@@ -1,9 +1,9 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.ActorOperation.Queries.GetActors
+namespace WebApi.Application.ActorOperation.Queries.GetActorss
 {
     public class GetActorQuery
     {

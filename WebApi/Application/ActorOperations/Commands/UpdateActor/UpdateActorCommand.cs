@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebApi.Common;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
 namespace WebApi.Application.ActorOperation.Commands.UpdateActor
@@ -23,7 +23,7 @@ namespace WebApi.Application.ActorOperation.Commands.UpdateActor
             var actor = _context.Actors.SingleOrDefault(x => x.Id == ActorId);
 
             if (actor is null)
-                throw InvalidOperationException("Aktör Bulunamadı");
+                throw new InvalidOperationException(" bulunamadı.");
 
             actor.Name = Model.Name == default ? actor.Name : Model.Name;
             actor.Surname = Model.Surname == default ? actor.Surname : Model.Surname;

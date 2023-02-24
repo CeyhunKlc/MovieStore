@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using WebApi.Common;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
 

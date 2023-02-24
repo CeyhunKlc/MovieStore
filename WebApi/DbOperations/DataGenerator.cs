@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using WebApi.Entities;
 
 
-namespace WebApi.dbOperations
+namespace WebApi.DbOperations
 {
     public class DataGenerator
     {
         public static void Initialize(IServiceProvider serviceprovider)
         {
-            using (var context = new MovieStoreDbContext(serviceprovider.GetRequiredService<DbContextOptions<BookStoreDbContext>>()))
+            using (var context = new MovieStoreDbContext(serviceprovider.GetRequiredService<DbContextOptions<MovieStoreDbContext>>()))
             {
                 if (context.Movies.Any())
                 {
@@ -36,7 +36,7 @@ namespace WebApi.dbOperations
                    new Movie
                    {
                        // ID = 1,
-                       GenreID = 1,
+                       GenreId = 1,
                        Title = "Hızlı Ve Öfkeli",
                        Year = "2013",
                        Director = "Justin Lin",
@@ -48,7 +48,7 @@ namespace WebApi.dbOperations
                    new Movie
                    {
                        // ID = 2,
-                       GenreID = 2,
+                       GenreId = 2,
                        Title = "Taşıyıcı",
                        Year = "2002",
                        Director = "Louis Leterrier , Corey Yuen",

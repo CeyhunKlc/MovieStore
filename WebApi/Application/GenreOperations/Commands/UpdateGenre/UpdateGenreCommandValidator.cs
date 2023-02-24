@@ -1,15 +1,14 @@
-using FluentValidation;
-using WebApi.Entities;
-using WebApi.Application.GenreOperation.Commands.UpdateGenre;
+ using FluentValidation;
+ using WebApi.Entities;
 
-namespace WebApi.Application.GenreOperation.Commands.UpdateGenreValidator
-{
-    public class UpdateGenreCommandValidator : AbstractValidator<UpdateGenreCommand>
-    {
-        public UpdateGenreCommandValidator()
-        {
-            RuleFor(command => command.Model.GenreId).GreaterThan(0);
-            RuleFor(command => command.Model.Name).NotEmpty().MinimumLength(2);
-        }
-    }
-}
+
+ namespace WebApi.Application.GenreOperation.Commands.UpdateGenre
+ {
+     public class UpdateGenreCommandValidator : AbstractValidator<UpdateGenreCommand>
+     {
+         public UpdateGenreCommandValidator()
+         {
+             RuleFor(g => g.Model.Name).NotEmpty().MinimumLength(2);
+         }
+     }
+ }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using webApi.Services;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Middlewires;
 
 var builder = WebApplication.CreateBuilder(args);

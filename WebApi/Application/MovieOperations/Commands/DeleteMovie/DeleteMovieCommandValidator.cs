@@ -1,14 +1,14 @@
-using FluentValidation;
-using WebApi.Entities;
-using WebApi.Application.MovieOperation.Commands.DeleteMovie;
+ using FluentValidation;
+ using WebApi.Entities;
 
-namespace WebApi.Application.MovieOperation.Commands.DeleteMovieValidator
-{
-    public class DeleteMovieCommandValidator : AbstractValidator<DeleteMovieCommand>
-    {
-        public DeleteMovieCommandValidator()
-        {
-            RuleFor(Command =>Command.MovieId).GreaterThan(0).NotEmpty();
-        }
-    } 
-}           
+
+ namespace WebApi.Application.MovieOperation.Commands.DeleteMovie
+ {
+     public class DeleteMovieCommandValidator : AbstractValidator<DeleteMovieCommand>
+     {
+         public DeleteMovieCommandValidator()
+         {
+             RuleFor(Command =>Command.MovieId).GreaterThan(0).NotEmpty();
+         }
+     } 
+ }           

@@ -1,16 +1,15 @@
-using FluentValidation;
-using WebApi.Entities;
-using WebApi.Application.ActorOperation.Commands.CreateActor;
+ using FluentValidation;
+ using WebApi.Entities;
 
-namespace WebApi.Application.ActorOperation.Commands.CreateActorValidator
-{
-    public class CreateActorCommandValidator : AbstractValidator<CreateActorCommand>
-    {
-        public CreateActorCommandValidator()
-        {
-            RuleFor(a=>a.Model.Name).NotEmpty();
-            RuleFor(a=>a.Model.Surname).NotEmpty();
-            RuleFor(a=>a.Model.PlayedMovies).NotEmpty();
-        }  
-    }
-}        
+ namespace WebApi.Application.ActorOperation.Commands.CreateActor
+ {
+     public class CreateActorCommandValidator : AbstractValidator<CreateActorCommand>
+     {
+         public CreateActorCommandValidator()
+         {
+             RuleFor(a=>a.Model.Name).NotEmpty();
+             RuleFor(a=>a.Model.Surname).NotEmpty();
+             RuleFor(a=>a.Model.PlayedMovies).NotEmpty();
+         }  
+     }
+ }        

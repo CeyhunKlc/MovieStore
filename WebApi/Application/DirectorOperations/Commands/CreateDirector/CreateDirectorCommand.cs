@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using AutoMapper;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
 namespace WebApi.Application.DirectorOperation.Commands.CreateDirector

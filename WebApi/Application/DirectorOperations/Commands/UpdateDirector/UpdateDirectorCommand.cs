@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebApi.Common;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using AutoMapper;
 using WebApi.Entities;
 
@@ -25,7 +25,7 @@ namespace WebApi.Application.DirectorOperation.Commands.UpdateDirector
             var director = _context.Directors.SingleOrDefault(x => x.Id == DirectorId);
 
             if (director == null)
-                throw InvalidOperationException("Direktör Bulunamadı");
+                throw new InvalidOperationException("Yönetmen Bulunamadı !");
 
             _mapper.Map<UpdateDirectorModel,Director>(Model,director);
             

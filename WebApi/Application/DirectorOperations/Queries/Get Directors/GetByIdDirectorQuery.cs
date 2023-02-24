@@ -1,6 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
 namespace WebApi.Application.DirectorOperation.Queries.GetDirectors
@@ -19,7 +19,7 @@ namespace WebApi.Application.DirectorOperation.Queries.GetDirectors
         }
          public GetByIdDirectorModel Handle()
         {
-            var director = _movieStoreDbContext.Directors.SingleOrDefault(g => g.Id == DirectorId);
+            var director = _context.Directors.SingleOrDefault(g => g.Id == DirectorId);
 
             if (director == null)
             {

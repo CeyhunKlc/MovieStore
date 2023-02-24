@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebApi.Common;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 using AutoMapper;
 

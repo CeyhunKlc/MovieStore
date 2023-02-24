@@ -1,18 +1,18 @@
 using System;
 using System.Linq;
-using WebApi.dbOperations;
+using WebApi.DbOperations;
 using WebApi.Entities;
 
 namespace WebApi.Application.ActorOperation.Commands.DeleteActor
 {
     public class DeleteActorCommand
     {
-        private readonly MovieStoreDbContext _context;
+        private readonly MovieStoreDbContext _DbContext;
         public int ActorId { get; set; }
 
-        public DeleteActorCommand(MovieStoreDbContext context)
+        public DeleteActorCommand(MovieStoreDbContext DbContext)
         {
-            _context = context;
+            _DbContext = DbContext;
         }
 
         public void Handle()
@@ -21,8 +21,8 @@ namespace WebApi.Application.ActorOperation.Commands.DeleteActor
             if (actor == null)
                 throw new InvalidOperationException("Silinecek Aktör Bulunamadı");
 
-            _context.Actors.Remove(actor);
-            _context.SaveChanges();    
+            _DbContext.Actors.Remove(actor);
+            _DbContext.SaveChanges();    
         }
     }
 }

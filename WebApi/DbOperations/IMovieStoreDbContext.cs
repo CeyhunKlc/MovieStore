@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi.Entities;
 
-
-namespace WebApi.dbOperations
+namespace WebApi.DbOperations
 {
     public interface IMovieStoreDbContext
     {

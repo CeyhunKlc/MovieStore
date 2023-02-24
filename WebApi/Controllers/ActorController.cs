@@ -1,61 +1,60 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using FluentValidation.Results;
-using Microsoft.AspNetCore.Authorization;
-using AutoMapper;
-using FluentValidation;
-using Microsoft.AspNetCore.Mvc;
-using WebApi.Application.ActorOperation.Commands.CreateActor;
-using WebApi.Application.ActorOperation.Commands.DeleteActor;
-using WebApi.Application.ActorOperation.Commands.UpdateActor;
-using WebApi.Application.ActorOperation.Queries.GetActorDetail;
-using WebApi.Application.ActorOperation.Queries.GetActors;
-using WebApi.dbOperations;
-using WebApi.Entities;
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using FluentValidation.Results;
+// using Microsoft.AspNetCore.Authorization;
+// using AutoMapper;
+// using FluentValidation;
+// using Microsoft.AspNetCore.Mvc;
+// using WebApi.Application.ActorOperation.Commands.CreateActor;
+// using WebApi.Application.ActorOperation.Commands.DeleteActor;
+// using WebApi.Application.ActorOperation.Commands.UpdateActor;
+// using WebApi.Application.ActorOperation.Queries.GetActorDetail;
+// using WebApi.DbOperations;
+// using WebApi.Entities;
 
-namespace WebApi.Controllers
-{
-    [Route ("api/[controller]/[action]")]
-    [apiController]
-    public class ActorController : ControllerBase
-    {
-        private readonly IMovieStoreDbContext _context;
-        private readonly IMapper _mapper;
+// namespace WebApi.Controllers
+// {
+//     [Route ("api/[controller]/[action]")]
+//     [ApiController]
+//     public class ActorController : ControllerBase
+//     {
+//         private readonly IMovieStoreDbContext _Dbcontext;
+//         private readonly IMapper _mapper;
 
-        public ActorController(IMovieStoreDbContext context, IMapper mapper)
-        {
-            _context = context;
-            _mapper = mapper;
-        }
+//         public ActorController(IMovieStoreDbContext Dbcontext, IMapper mapper)
+//         {
+//             _Dbcontext = Dbcontext;
+//             _mapper = mapper;
+//         }
 
-        [HttpPost]
-        public IActionResult Create([FromBody] CreateActorCommand createActor)
-        {
-            CreateActorCommand  command = new CreateActorCommand(_context,_mapper);
-            command.Model = createActor;
-            command.Handle();
+//         [HttpPost]
+//         public IActionResult Create([FromBody] CreateActorCommand createActor)
+//         {
+//             CreateActorCommand  command = new CreateActorCommand(_Dbcontext,_mapper);
+//             command.Model = CreateActorCommand;
+//             command.Handle();
 
-            return Ok();
-        }
+//             return Ok();
+//         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete([FromRoute] int id)
-        {
-            DeleteActorCommand  command = new DeleteActorCommand(_context);
-            command.ActorId = id;
-            command.Handle();
+//         [HttpDelete("{id}")]
+//         public IActionResult Delete([FromRoute] int id)
+//         {
+//             DeleteActorCommand  command = new DeleteActorCommand(_Dbcontext);
+//             command.ActorId = id;
+//             command.Handle();
 
-            return Ok();
-        }
+//             return Ok();
+//         }
 
-        [HttpGet]
-        public IActionResult GetList()
-        {
-            GetActorQuery query = new GetActorQuery(_context,_mapper);
-            var result = query.Handle();
-            return Ok (result);
-        }
+//         [HttpGet]
+//         public IActionResult GetList()
+//         {
+//             GetActorQuery query = new GetActorQuery(_context,_mapper);
+//             var result = query.Handle();
+//             return Ok (result);
+//         }
         
-    }    
-}
+//     }    
+// }

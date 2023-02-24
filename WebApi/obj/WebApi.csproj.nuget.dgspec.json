@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj": {}
+    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj": {
+    "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Ceyhun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\Ceyhun\\Desktop\\Pratikler2\\MovieStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ceyhun\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,7 +50,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.5.0, )"
+              "version": "[11.5.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -58,19 +58,19 @@
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0-preview.1.23111.4, )"
+              "version": "[7.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[8.0.0-preview.1.23111.4, )"
+              "version": "[7.0.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.3-beta1, )"
+              "version": "[13.0.2, )"
             }
           },
           "imports": [
@@ -92,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
