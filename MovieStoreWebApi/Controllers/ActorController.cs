@@ -4,6 +4,7 @@ using WebApi.Application.ActorOperation.Commands.CreateActor;
 using WebApi.Application.ActorOperation.Commands.DeleteActor;
 using WebApi.Application.ActorOperation.Queries.GetActorss;
 using WebApi.DbOperations;
+using WebApi.Common;
 
 namespace WebApi.Controllers
 {
@@ -11,25 +12,33 @@ namespace WebApi.Controllers
     [ApiController]
     public class ActorController : ControllerBase
     {
-        private readonly MovieStoreDbContext _dbContext;
+        private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public ActorController(MovieStoreDbContext dbContext, IMapper mapper)
+        public ActorController(IMovieStoreDbContext context, IMapper mapper)
         {
-            _dbContext = dbContext;
+            _context = context;
             _mapper = mapper;
         }
+
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetList()
         {
-            return Ok("Verileri Getir");
+            var actors =_context.Actors.Where(x => x.IsActive == true).ToList<Actor>();
+            
+            var mapModel = _mapper.Map<List<ActorsViewModel>>(actors);
+
+            return mapModel;
+            // GetActorQuery query = new GetActorQuery (_context,_mapper);
+            // var result = query.Handle();
+            return Ok(mapModel);
         }
 
         //[HttpPost]
-        //public IActionResult Create([FromBody] CreateActorCommand createActor)
+        //public IActionResult Create([FromBody] CreateActorModel createActor)
         //{
         //    CreateActorCommand command = new CreateActorCommand(_dbContext, _mapper);
-        //    command.Model = CreateActorCommand;
+        //    command.Model = createActor;
         //    command.Handle();
 
         //    return Ok();

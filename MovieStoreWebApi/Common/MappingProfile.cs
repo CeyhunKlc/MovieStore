@@ -1,5 +1,6 @@
 using AutoMapper;
 using WebApi.Application.ActorOperation.Commands.CreateActor;
+using WebApi.Application.ActorOperation.Commands.DeleteActor;
 using WebApi.Application.ActorOperation.Commands.UpdateActor;
 using WebApi.Application.CustomerOperation.Commands.CreateCustomer;
 using WebApi.Application.DirectorOperation.Commands.CreateDirector;
@@ -14,8 +15,9 @@ using WebApi.Application.MovieOperation.Commands.UpdateMovie;
 using WebApi.Application.MovieOperation.Queries.GetMovie;
 using WebApi.Application.MovieOperation.Queries.GetMovieDetail;
 using WebApi.Application.OrderOperations.Model;
+using WebApi.Application.ActorOperation.Queries.GetActorss;
 using WebApi.Entities;
-
+using WebApi.DbOperations;
 namespace WebApi.Common
 {
     public class MappingProfile : Profile
@@ -51,7 +53,7 @@ namespace WebApi.Common
             //Actor
             CreateMap<Actor, CreateActorModel>().ReverseMap();
 
-            CreateMap<Actor, UpdateActorModel>().ReverseMap();
+            CreateMap<Actor, ActorsViewModel>().ReverseMap();
 
 
             //Director

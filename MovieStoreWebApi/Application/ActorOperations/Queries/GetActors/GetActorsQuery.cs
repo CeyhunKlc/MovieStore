@@ -2,24 +2,28 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApi.DbOperations;
 using WebApi.Entities;
+using WebApi.Common;
 
 namespace WebApi.Application.ActorOperation.Queries.GetActorss
 {
     public class GetActorQuery
     {
-        private readonly MovieStoreDbContext _context;
+        public ActorsViewModel Model {get; set;}
+        private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetActorQuery(MovieStoreDbContext context, IMapper mapper)
+        public GetActorQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
         public List<ActorsViewModel> Handle()
         {
-            var actors = _context.Actors.OrderBy(x => x.Id);
-            List<ActorsViewModel> returnObj = _mapper.Map<List<ActorsViewModel>>(actors);
-            return returnObj;
+            var actors =_context.Actors.Where(x => x.IsActive == true).ToList<Actor>();
+            
+            var mapModel = _mapper.Map<List<ActorsViewModel>>(actors);
+
+            return mapModel;
         }
     }
 

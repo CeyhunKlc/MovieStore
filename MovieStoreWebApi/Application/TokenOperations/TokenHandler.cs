@@ -7,6 +7,7 @@ using WebApi.Application.TokenOperations.Models;
 using WebApi.Entities;
 
 
+
 namespace WebApi.Application.TokenOperations
 {
     public class TokenHandler
@@ -25,14 +26,14 @@ namespace WebApi.Application.TokenOperations
             
             tokenModel.Expiration = DateTime.Now.AddMinutes(15);
 
-            JwtSecurityToken securityToken = new JwtSecurityToken
-            (
-                issuer:Configuration["Token:Issuer"],
-                audience:Configuration["Token: Audience"],
+             JwtSecurityToken securityToken = new JwtSecurityToken(
+                issuer: Configuration["Token:Issuer"],
+                audience: Configuration["Token:Audience"],
                 expires: tokenModel.Expiration,
-                notBefore : DateTime.Now,
-                signingCredentials : credentials
+                notBefore: DateTime.Now,
+                signingCredentials: credentials
             );
+
 
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
 
