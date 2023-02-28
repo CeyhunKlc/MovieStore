@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApi.Entities;
 
 
+
 namespace WebApi.DbOperations
 {
     public class DataGenerator
@@ -24,11 +25,11 @@ namespace WebApi.DbOperations
                 context.SaveChanges();
 
                 context.Actors.AddRange(
-                    new Actor { Name = "Vin", Surname = "Diesel",PlayedMovies="Hızlı Ve Öfkeli" },
-                    new Actor { Name = "Paul", Surname ="Walker", PlayedMovies="Hızlı Ve Öfkeli" },
-                    new Actor { Name = "Dwayne", Surname = "Johnson",PlayedMovies="Hızlı Ve Öfkeli" },
-                    new Actor { Name = "Jason", Surname = "Statham",PlayedMovies="Taşıyıcı" },
-                    new Actor { Name = "Rich", Surname = "Young",PlayedMovies="Taşıyıcı" }
+                    new Actor { Id=1,Name = "Vin", Surname = "Diesel",PlayedMovies="Hızlı Ve Öfkeli" },
+                    new Actor { Id = 2,Name = "Paul", Surname ="Walker", PlayedMovies="Hızlı Ve Öfkeli" },
+                    new Actor { Id = 3,Name = "Dwayne", Surname = "Johnson",PlayedMovies="Hızlı Ve Öfkeli" },
+                    new Actor { Id = 4,Name = "Jason", Surname = "Statham",PlayedMovies="Taşıyıcı" },
+                    new Actor { Id = 5,Name = "Rich", Surname = "Young",PlayedMovies="Taşıyıcı" }
                 );
                 context.SaveChanges();
 
@@ -79,6 +80,38 @@ namespace WebApi.DbOperations
                     new Order {CustomerId=2,MovieId=1,purchasedTime = new DateTime(2023,02,19), IsActive= true},
                     new Order {CustomerId=3,MovieId=2,purchasedTime = new DateTime(2023,02,10), IsActive= true}
                 );
+
+                context.Customers.AddRange(
+
+                    new Customer
+                {
+                    Id = 1,
+                    Name = "ceyhun",
+                    Surname = "kilic",
+                    Email = "ceyhun@mail.com",
+                    Password = "123456",
+                    IsActive = true        
+                },
+
+                new Customer
+                {
+                    Name = "mehmet",
+                    Surname = "yılmaz",
+                    Email = "mehmet@mail.com",
+                    Password = "1234567",
+                    IsActive = true        
+                },
+
+                new Customer
+                {
+                    Name = "ali",
+                    Surname = "demir",
+                    Email = "ali@mail.com",
+                    Password = "12345",
+                    IsActive = true
+                }            
+                );
+
                 context.SaveChanges(); 
             }
         }

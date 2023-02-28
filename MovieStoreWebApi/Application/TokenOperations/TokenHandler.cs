@@ -12,8 +12,9 @@ namespace WebApi.Application.TokenOperations
 {
     public class TokenHandler
     {
-        public IConfiguration Configuration {get; set;}
-        public TokenHandler (IConfiguration configuration)
+        public IConfiguration Configuration { get; set; }
+
+        public TokenHandler(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -22,11 +23,11 @@ namespace WebApi.Application.TokenOperations
         {
             Token tokenModel = new Token();
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is my custom secret key for authentication"));
-            SigningCredentials credentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
-            
+            SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
             tokenModel.Expiration = DateTime.Now.AddMinutes(15);
 
-             JwtSecurityToken securityToken = new JwtSecurityToken(
+            JwtSecurityToken securityToken = new JwtSecurityToken(
                 issuer: Configuration["Token:Issuer"],
                 audience: Configuration["Token:Audience"],
                 expires: tokenModel.Expiration,
@@ -34,11 +35,11 @@ namespace WebApi.Application.TokenOperations
                 signingCredentials: credentials
             );
 
-
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
 
+            //Creating Token
             tokenModel.AccessToken = tokenHandler.WriteToken(securityToken);
-            tokenModel.RefreshToken= CreateRefreshToken();
+            tokenModel.RefreshToken = CreateRefreshToken();
 
             return tokenModel;
         }

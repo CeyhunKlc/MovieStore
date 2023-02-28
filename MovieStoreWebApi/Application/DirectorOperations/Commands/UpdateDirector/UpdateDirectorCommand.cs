@@ -5,6 +5,7 @@ using WebApi.Common;
 using WebApi.DbOperations;
 using AutoMapper;
 using WebApi.Entities;
+using System.IO;
 
 namespace WebApi.Application.DirectorOperation.Commands.UpdateDirector
 {
@@ -12,17 +13,18 @@ namespace WebApi.Application.DirectorOperation.Commands.UpdateDirector
     {
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
-        public int DirectorId { get; set; }
+        public int GenreId { get; set; }
         public UpdateDirectorModel Model { get; set; }
 
-        public UpdateDirectorCommand(IMovieStoreDbContext context)
+        public UpdateDirectorCommand(IMovieStoreDbContext context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public void Handle()
         {
-            var director = _context.Directors.SingleOrDefault(x => x.Id == DirectorId);
+            var director = _context.Directors.SingleOrDefault(x => x.Id == GenreId);
 
             if (director == null)
                 throw new InvalidOperationException("Yönetmen Bulunamadı !");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\moviestorewebapi\\MovieStoreWebApi.csproj": {}
+    "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\MovieStoreWebApi\\MovieStoreWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\moviestorewebapi\\MovieStoreWebApi.csproj": {
+    "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\MovieStoreWebApi\\MovieStoreWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\moviestorewebapi\\MovieStoreWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\MovieStoreWebApi\\MovieStoreWebApi.csproj",
         "projectName": "MovieStoreWebApi",
-        "projectPath": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\moviestorewebapi\\MovieStoreWebApi.csproj",
+        "projectPath": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\MovieStoreWebApi\\MovieStoreWebApi.csproj",
         "packagesPath": "C:\\Users\\Ceyhun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\moviestorewebapi\\obj\\",
+        "outputPath": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\MovieStoreWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ceyhun\\AppData\\Roaming\\NuGet\\NuGet.Config",

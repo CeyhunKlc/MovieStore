@@ -20,9 +20,9 @@ namespace WebApi.DbOperations
         public DbSet<Order> Orders { get; set; }
 
 
-        public override int SaveChanges()
+        void IMovieStoreDbContext.SaveChanges()
         {
-            return base.SaveChanges();
+             base.SaveChanges();
         }
     }
 }

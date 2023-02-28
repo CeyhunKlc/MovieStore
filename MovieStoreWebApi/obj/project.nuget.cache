@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CJP9ZqDpNewxImeLIAhnigsb6a5/mRJyG1VfzKysTAsJ/PqWrd7YbG8dv3Y30KXUqg/cpjL0uLlS4Nmdw0YmmQ==",
+  "dgSpecHash": "VL0nh62Z72KlVYe+p6W2ZHBy3EkLMT1WTwBNokIOVx5rPHBZ9/fX6B5TzxgtpaC/91pghNaIl7mfGcQCkoXTzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\moviestorewebapi\\MovieStoreWebApi.csproj",
+  "projectFilePath": "C:\\Users\\Ceyhun\\Desktop\\MovieStore\\MovieStoreWebApi\\MovieStoreWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ceyhun\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Ceyhun\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

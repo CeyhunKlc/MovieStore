@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApi.Application.ActorOperation.Commands.CreateActor;
 using WebApi.Application.ActorOperation.Commands.DeleteActor;
-using WebApi.Application.ActorOperation.Queries.GetActorss;
 using WebApi.DbOperations;
-using WebApi.Common;
+using WebApi.Entities;
 
 namespace WebApi.Controllers
 {
@@ -19,48 +19,59 @@ namespace WebApi.Controllers
         {
             _context = context;
             _mapper = mapper;
+
+        }
+        [HttpPost]
+        public IActionResult CreateDefaultActors()
+        {
+            _context.Actors.AddRange(
+                     new Actor { Id = 6, Name = "Vin", Surname = "Diesel", PlayedMovies = "Hızlı Ve Öfkeli" },
+                    new Actor { Id = 7, Name = "Paul", Surname = "Walker", PlayedMovies = "Hızlı Ve Öfkeli" },
+                    new Actor { Id = 8, Name = "Dwayne", Surname = "Johnson", PlayedMovies = "Hızlı Ve Öfkeli" },
+                    new Actor { Id = 9, Name = "Jason", Surname = "Statham", PlayedMovies = "Taşıyıcı" },
+                    new Actor { Id = 10, Name = "Rich", Surname = "Young", PlayedMovies = "Taşıyıcı" }
+                );
+            _context.SaveChanges();
+            return Ok();
         }
 
         [HttpGet]
-        public IActionResult GetList()
+        public  IActionResult GetList()
         {
-            var actors =_context.Actors.Where(x => x.IsActive == true).ToList<Actor>();
-            
-            var mapModel = _mapper.Map<List<ActorsViewModel>>(actors);
+             
+            var actors = _context.Actors.ToList();
 
-            return mapModel;
+            //var mapModel = _mapper.Map<ActorsViewModel>(actors);
             // GetActorQuery query = new GetActorQuery (_context,_mapper);
             // var result = query.Handle();
-            return Ok(mapModel);
+            return Ok(actors);
         }
 
-        //[HttpPost]
-        //public IActionResult Create([FromBody] CreateActorModel createActor)
-        //{
-        //    CreateActorCommand command = new CreateActorCommand(_dbContext, _mapper);
-        //    command.Model = createActor;
-        //    command.Handle();
+        [HttpPost]
+        public IActionResult Create(CreateActorModel createActor)
+        {
+            Actor actor = _mapper.Map<Actor>(createActor);
+            _context.Actors.Add(actor);
+            _context.SaveChanges();
 
-        //    return Ok();
-        //}
+            var result = _mapper.Map<CreateActorModel>(actor);
+            return Ok(result);
+        }
 
-        //[HttpDelete("{id}")]
-        //public IActionResult Delete([FromRoute] int id)
-        //{
-        //    DeleteActorCommand command = new DeleteActorCommand(_Dbcontext);
-        //    command.ActorId = id;
-        //    command.Handle();
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute] int id)
+        {
+            var actor = _context.Actors.SingleOrDefault(x => x.Id == id );
+            if (actor == null)
+                throw new InvalidOperationException("Silinecek Aktör Bulunamadı");
 
-        //    return Ok();
-        //}
+            _context.Actors.Remove(actor);
+            _context.SaveChanges();
+           
 
-        //[HttpGet]
-        //public IActionResult GetList()
-        //{
-        //    GetActorQuery query = new GetActorQuery(_Dbcontext, _mapper);
-        //    var result = query.Handle();
-        //    return Ok(result);
-        //}
+            return Ok();
+        }
+
 
     }
 }

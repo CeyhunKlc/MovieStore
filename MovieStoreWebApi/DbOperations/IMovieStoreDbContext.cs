@@ -13,6 +13,6 @@ namespace WebApi.DbOperations
         public DbSet<Order> Orders { get; set; }
         
           
-        int SaveChanges();
+        void SaveChanges();
     }
 }

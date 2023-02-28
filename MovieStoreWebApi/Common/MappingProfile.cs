@@ -5,7 +5,7 @@ using WebApi.Application.ActorOperation.Commands.UpdateActor;
 using WebApi.Application.CustomerOperation.Commands.CreateCustomer;
 using WebApi.Application.DirectorOperation.Commands.CreateDirector;
 using WebApi.Application.DirectorOperation.Commands.UpdateDirector;
-using WebApi.Application.DirectorOperation.Queries.GetDirectorDetail;
+using WebApi.Application.DirectorOperations.Queries.GetListDirector;
 using WebApi.Application.DirectorOperation.Queries.GetDirectors;
 using WebApi.Application.GenreOperation.Commands.CreateGenre;
 using WebApi.Application.GenreOperation.Commands.UpdateGenre;
