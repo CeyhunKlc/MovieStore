@@ -9,8 +9,8 @@ namespace WebApi.Application.OrderOperation.Commands.CreateOrder
     {
         public CreateOrderCommandValidator()
         {
-          //  RuleFor(a=>a.Model.MovieId).NotEmpty();
-          //  RuleFor(a=>a.Model.CustomerId).NotEmpty();
+            RuleFor(a=>a.Model.MovieId).NotEmpty();
+            RuleFor(a=>a.Model.CustomerId).NotEmpty();
         }  
     }
 }        

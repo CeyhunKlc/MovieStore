@@ -8,9 +8,8 @@ namespace WebApi.Application.OrderOperation.Commands.UpdateOrder
     {
         public UpdateOrderCommandValidator()
         {
-          //  RuleFor(a=>a.Model.OrderId).NotEmpty();
-          //  RuleFor(a=>a.Model.CustomerId).NotEmpty();
-          //  RuleFor(a=>a.Model.MovieId).NotEmpty();
+            RuleFor(a=>a.Model.CustomerId).NotEmpty();
+            RuleFor(a=>a.Model.MovieId).NotEmpty();
         }  
     }
 }        

@@ -6,7 +6,9 @@ using WebApi.Entities;
 namespace WebApi.Application.MovieOperation.Queries.GetMovie
 {
     public class GetMovieQuery
+
     {
+        public int Id {get; set;}
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
 
@@ -25,13 +27,9 @@ namespace WebApi.Application.MovieOperation.Queries.GetMovie
 
     public class MoviesViewModel
     {
-        public int GenreId { get; set; }
+        public int Genre { get; set; }
         public string Title { get; set; }
-        public string Year { get; set; }
-        public string Director { get; set; }
-        public string Actors { get; set; }
         public int Price { get; set; }
-        public bool IsActive { get; set; }
     }
 
 }

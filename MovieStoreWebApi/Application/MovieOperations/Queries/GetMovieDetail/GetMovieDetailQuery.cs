@@ -26,14 +26,14 @@ namespace WebApi.Application.MovieOperation.Queries.GetMovieDetail
         {
             var movie = _context.Movies.SingleOrDefault(x => x.Id == MovieId);
             if (movie is null)
-                throw new InvalidOperationException("kitap Bulunamadı");
+                throw new InvalidOperationException("film Bulunamadı");
             return _mapper.Map<MovieDetailViewModel>(movie);
         }
     }
 
     public class MovieDetailViewModel
     {
-        public int GenreId { get; set; }
+        public int Genre { get; set; }
         public string Title{get; set;}
         public string Year { get; set; }
         public string Director { get; set; }

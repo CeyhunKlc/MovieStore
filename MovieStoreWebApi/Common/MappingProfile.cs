@@ -26,10 +26,10 @@ namespace WebApi.Common
         {
             //Movei
             CreateMap<Movie, MoviesViewModel>()
-            .ForMember(dest => dest.GenreId, opt => opt.MapFrom(src => src.Genre.Name));
+            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
 
             CreateMap<Movie, MovieDetailViewModel>()
-            .ForMember(dest => dest.GenreId, opt => opt.MapFrom(src => src.Genre.Name));
+            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
 
             CreateMap<Movie, CreateMovieModel>().ReverseMap();
 
